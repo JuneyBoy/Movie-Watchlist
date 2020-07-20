@@ -19,7 +19,6 @@ def get_movie_rating(movie_data):
     else:
         return "N/A"
 
-#print(get_movie_data("Frozen"))
 
 #returns Year
 def get_movie_year(movie_data):
@@ -41,11 +40,4 @@ def get_movie_writer(movie_data):
 #returns Director
 def get_movie_director(movie_data):
     return movie_data['Director']
-
-movie_data = get_movie_data("Frozen")
-#print(movie_data)
-#print(get_movie_year(movie_data))
-print(get_movie_writer(movie_data))
-#print(get_movie_director(movie_data))
-#print(get_movie_rating(movie_data))#
 
