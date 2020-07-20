@@ -31,10 +31,10 @@ def get_movie_writer(movie_data):
     tot = []
     for writer in writers:
         name_pieces = writer.split('(') 
-        print(name_pieces)
         del(name_pieces[-1])
         tot.append(name_pieces[0])
-    return tot
+    screenwriter_string = ","
+    return screenwriter_string.join(tot)
         
 
 #returns Director
