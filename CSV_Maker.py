@@ -5,12 +5,12 @@ columns = ["Title", "Date Watched", "Director", "Screenwriter", "Release Year", 
 
 movie_data = [] 
 
-with open("movie_watchlist.csv", 'w') as file:
+#with open("movie_watchlist.csv", 'w') as file:
     # creating a csv dict writer object  
-    writer = csv.DictWriter(file, fieldnames = columns)  
+    #writer = csv.DictWriter(file, fieldnames = columns)  
         
     # writing headers (field names)  
-    writer.writeheader()
+    #writer.writeheader()
 
 
 
@@ -27,11 +27,9 @@ def add_movie(title, date_watched):
     csv_data.append(get_movie_year(movie_data))
     csv_data.append(get_movie_rating(movie_data))
 
-    with open("movie_watchlist.csv", 'a') as file:
+    with open("movie_watchlist.csv", 'a+', newline="") as file:
         csvwriter = csv.writer(file)
-
         csvwriter.writerow(csv_data)
-
 
 
 def user_input():
