@@ -27,17 +27,18 @@ def get_movie_year(movie_data):
 #returns Writer
 def get_movie_writer(movie_data):
     #makes list of those who only wrote the screenplay, excluding those who wrote the story or what the story is based on
-    writers = [writer for writer in movie_data['Writer'].split(',') if "screenplay" in writer]
-    tot = []
-    for writer in writers:
-        name_pieces = writer.split('(') 
-        del(name_pieces[-1])
-        tot.append(name_pieces[0])
-    screenwriter_string = ","
-    return screenwriter_string.join(tot)
+    if "screenplay" in movie_data["Writer"]:
+        writers = [writer for writer in movie_data['Writer'].split(',') if "screenplay" in writer]
+        tot = []
+        for writer in writers:
+            name_pieces = writer.split('(') 
+            del(name_pieces[-1])
+            tot.append(name_pieces[0])
+        screenwriter_string = ","
+        return screenwriter_string.join(tot)
+    return movie_data["Writer"]
         
 
 #returns Director
 def get_movie_director(movie_data):
     return movie_data['Director']
-

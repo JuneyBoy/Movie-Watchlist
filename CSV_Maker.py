@@ -33,6 +33,7 @@ def add_movie(title, date_watched):
         csvwriter.writerow(csv_data)
 
 
+
 def user_input():
     movie_title = input("Enter name of movie watched: ")
     date_watched = input("Enter date (month day, year) movie was watched: ")
@@ -40,7 +41,7 @@ def user_input():
     add_movie(movie_title, date_watched)
 
 
-
+user_input()
 
 
 
