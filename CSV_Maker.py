@@ -1,20 +1,19 @@
 import csv
+from os import path
 from Data_Retrieve import *
-
-columns = ["Title", "Date Watched", "Director", "Screenwriter", "Release Year", "Rotten Tomato Score"]
-
-movie_data = [] 
-
-#with open("movie_watchlist.csv", 'w') as file:
-    # creating a csv dict writer object  
-    #writer = csv.DictWriter(file, fieldnames = columns)  
-        
-    # writing headers (field names)  
-    #writer.writeheader()
-
 
 
 def add_movie(title, date_watched):
+    
+    if not path.exists("movie_watchlist.csv"):
+        columns = ["Title", "Date Watched", "Director", "Screenwriter", "Release Year", "Rotten Tomato Score"]
+
+        movie_data = [] 
+
+        with open("movie_watchlist.csv", 'w') as file: 
+            writer = csv.DictWriter(file, fieldnames = columns)  
+            writer.writeheader()
+
     
     movie_data = get_movie_data(title)
 
@@ -27,7 +26,7 @@ def add_movie(title, date_watched):
     csv_data.append(get_movie_year(movie_data))
     csv_data.append(get_movie_rating(movie_data))
 
-    with open("movie_watchlist.csv", 'a+', newline="") as file:
+    with open("movie_watchlist.csv", 'a', newline="") as file:
         csvwriter = csv.writer(file)
         csvwriter.writerow(csv_data)
 
