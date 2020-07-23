@@ -1,2 +1,2 @@
 # Movie-Watchlist
-## Created by Arjun Ganesan
+## Created by Arjun Ganesan and Jeffrey Liu
