@@ -9,4 +9,5 @@ client = gspread.authorize(creds)
 
 sheet = client.open("Movie Watchlist").worksheet("Watched Movies")
 
-print(sheet.get_all_records())
+def add_movie_to_sheet(movie_data):
+    sheet.insert_row(movie_data, 3, 'USER_ENTERED')
