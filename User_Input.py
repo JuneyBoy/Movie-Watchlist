@@ -1,6 +1,6 @@
 from Data_Retrieve import *
-from CSV_Maker import *
-from gsheet_updater import *
+from CSV_Maker import add_movie_to_csv
+from gsheet_updater import add_movie_to_sheet
 
 def user_input():
     movie_title = input("Enter name of movie watched: ")

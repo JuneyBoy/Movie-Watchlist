@@ -1,6 +1,5 @@
 import csv
 from os import path
-from Data_Retrieve import *
 
 
 def add_movie_to_csv(movie_data):
